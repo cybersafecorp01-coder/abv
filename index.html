@@ -1,63 +1,433 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DRONES Xag - Concessionária de Drones Futurista</title>
-  <meta name="description"
-    content="DRONES Xag - A mais avançada concessionária de drones com tecnologia cyberpunk e designs futuristas" />
-  <meta name="author" content="DRONES Xag" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PKS Transportes Ltda — Transporte Rodoviário de Cargas</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Bootstrap 5 -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;800&display=swap"
-    rel="stylesheet">
-  <link rel="shortcut icon" href="/assets/favicon-62CU8eGd.ico" type="image/x-icon">
-  <script type="module" crossorigin src="/assets/index-Cg4v_yam.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-6q63ZOVG.css">
-</head>
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
 
-<body>
-  <div id="root"></div>
-
-  <!-- Botão WhatsApp Flutuante -->
-  <a href="https://wa.me/5548984806556?text=Olá,%20desejo%20um%20atendimento!" class="whatsapp-float" target="_blank"
-    aria-label="Atendimento via WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-  </a>
-
+  <meta name="description" content="PKS Transportes Ltda — Transporte rodoviário de cargas (municipal, intermunicipal, interestadual e internacional), produtos perigosos e manutenção automotiva. Solicite uma cotação." />
   <style>
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 100px;
-      /* Aumente este valor para levantar o ícone */
-      right: 31px;
-      background-color: #25D366;
-      border-radius: 50%;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s ease;
+    :root{
+      --brand:#0d6efd;      /* azul bootstrap */
+      --brand-2:#0b5ed7;    /* azul escuro */
+      --text:#1f2937;       /* cinza-escuro elegante */
     }
-
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
+    body{ color:var(--text); }
+    .navbar-brand b{ letter-spacing:.4px }
+    .topbar{
+      background:linear-gradient(90deg, var(--brand), var(--brand-2));
+      color:#fff; font-size:.9rem
     }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+    .hero{
+      position:relative; min-height:68vh; display:grid; place-items:center; color:#fff;
+      background:
+        linear-gradient(rgba(13,110,253,.65), rgba(11,94,215,.75)),
+        url('https://images.unsplash.com/photo-1501706362039-c06b2d715385?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
     }
+    .hero h1{ font-weight:800; text-shadow:0 2px 16px rgba(0,0,0,.45) }
+    .hero .card{ backdrop-filter: blur(6px); background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.25) }
+    .stats .card{ border:0; box-shadow:0 10px 30px rgba(0,0,0,.06); border-radius:1rem }
+    .services .card{ height:100%; border:0; box-shadow:0 8px 24px rgba(0,0,0,.05); border-radius:1rem }
+    .badge-soft{ background:rgba(13,110,253,.1); color:var(--brand); border:1px solid rgba(13,110,253,.15) }
+    .section-title span{ display:inline-block; padding:.35rem .65rem; border-radius:2rem }
+    .footer a{ color:#d0e2ff; text-decoration:none }
+    .footer a:hover{ text-decoration:underline }
   </style>
+</head>
+<body>
 
+  <!-- Topbar -->
+  <div class="topbar py-2">
+    <div class="container d-flex flex-wrap gap-3 justify-content-center justify-content-md-between align-items-center">
+      <div><i class="bi bi-geo-alt"></i> R. Foz do Iguaçu, 366 – Emiliano Perneta, Pinhais/PR – CEP 83324-500</div>
+      <div class="d-flex gap-3">
+        <a class="text-white" href="mailto:kelly.endlich@gmail.com"><i class="bi bi-envelope"></i> kelly.endlich@gmail.com</a>
+        <a class="text-white" href="tel:+5541998867130"><i class="bi bi-telephone"></i> (41) 9886-7130</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-truck fs-4 text-primary"></i>
+        <span><b>PKS</b> Transportes Ltda</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cnaes">CNAEs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Atendimento</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-primary" href="#contato"><i class="bi bi-whatsapp"></i> Solicitar Cotação</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Banner -->
+  <header class="hero">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <div class="card p-4 p-md-5 text-center text-white rounded-4">
+            <h1 class="display-5 mb-3">Transporte rodoviário de cargas com eficiência e segurança</h1>
+            <p class="lead mb-4">Atendemos operações <b>municipais, intermunicipais, interestaduais e internacionais</b>, com frota preparada e gestão orientada a prazos.</p>
+            <div class="d-flex gap-2 justify-content-center">
+              <a href="#contato" class="btn btn-light btn-lg"><i class="bi bi-clipboard2-check"></i> Pedir orçamento</a>
+              <a href="#servicos" class="btn btn-outline-light btn-lg">Conhecer serviços</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- mini stats -->
+      <div class="row g-4 mt-4 stats">
+        <div class="col-6 col-md-3">
+          <div class="card text-center p-3">
+            <div class="fs-2"><i class="bi bi-buildings"></i></div>
+            <div class="fw-bold">CNPJ 31.845.444/0001-51</div>
+            <small class="text-muted">Abertura: 24/10/2018</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card text-center p-3">
+            <div class="fs-2"><i class="bi bi-diagram-3"></i></div>
+            <div class="fw-bold">Natureza: Ltda</div>
+            <small class="text-muted">Porte: EPP</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card text-center p-3">
+            <div class="fs-2"><i class="bi bi-shield-check"></i></div>
+            <div class="fw-bold">Situação: ATIVA</div>
+            <small class="text-muted">Receita Federal</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card text-center p-3">
+            <div class="fs-2"><i class="bi bi-pin-map"></i></div>
+            <div class="fw-bold">Pinhais — PR</div>
+            <small class="text-muted">Emiliano Perneta</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <section id="sobre" class="py-5">
+    <div class="container">
+      <div class="section-title mb-4">
+        <span class="badge-soft">Sobre a empresa</span>
+        <h2 class="mt-3">PKS Transportes Ltda</h2>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <p>Somos uma empresa de <b>transporte rodoviário de cargas</b>, com atuação em rotas urbanas e de longa distância. Nosso foco é confiabilidade, segurança e comunicação transparente a cada etapa do transporte.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Coletas e entregas programadas</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Rastreamento e atualização de status</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-primary"></i> Atendimento consultivo para operações sob medida</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-4 bg-light rounded-4">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="small text-muted">Nome empresarial</div>
+                <div class="fw-semibold">PKS TRANSPORTES LTDA</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="small text-muted">CNPJ</div>
+                <div class="fw-semibold">31.845.444/0001-51</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="small text-muted">Natureza jurídica</div>
+                <div class="fw-semibold">206-2 — Sociedade Empresária Ltda</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="small text-muted">Porte</div>
+                <div class="fw-semibold">EPP</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="small text-muted">Situação cadastral</div>
+                <div class="fw-semibold">ATIVA</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="small text-muted">Abertura</div>
+                <div class="fw-semibold">24/10/2018</div>
+              </div>
+              <div class="col-12">
+                <div class="small text-muted">Endereço</div>
+                <div class="fw-semibold">R. Foz do Iguaçu, 366 — Emiliano Perneta, Pinhais/PR — CEP 83324-500</div>
+              </div>
+            </div>
+            <div class="mt-3 small text-muted">Fonte: Comprovante de inscrição e de situação cadastral — Receita Federal.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="py-5 bg-light services">
+    <div class="container">
+      <div class="section-title mb-4">
+        <span class="badge-soft">O que fazemos</span>
+        <h2 class="mt-3">Serviços</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4">
+            <div class="fs-1 mb-2"><i class="bi bi-truck"></i></div>
+            <h5>Transporte municipal</h5>
+            <p class="small text-muted mb-0">Coletas e entregas urbanas com foco em agilidade e segurança.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4">
+            <div class="fs-1 mb-2"><i class="bi bi-road"></i></div>
+            <h5>Intermunicipal &amp; interestadual</h5>
+            <p class="small text-muted mb-0">Rotas de média e longa distância, planejamento de prazos e janelas.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4">
+            <div class="fs-1 mb-2"><i class="bi bi-globe2"></i></div>
+            <h5>Operações internacionais</h5>
+            <p class="small text-muted mb-0">Capacidade para fronteiras e integrações logísticas internacionais.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 p-4">
+            <div class="fs-1 mb-2"><i class="bi bi-exclamation-triangle"></i></div>
+            <h5>Produtos perigosos</h5>
+            <p class="small text-muted mb-0">Atendimento a cargas classificadas, conforme normas vigentes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CNAEs -->
+  <section id="cnaes" class="py-5">
+    <div class="container">
+      <div class="section-title mb-4">
+        <span class="badge-soft">CNAE</span>
+        <h2 class="mt-3">Atividades Econômicas</h2>
+      </div>
+      <div class="accordion" id="accCnae">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pc1" aria-expanded="true" aria-controls="pc1">
+              Principal — 49.30-2-01: Transporte rodoviário de carga, exceto perigosos e mudanças, municipal
+            </button>
+          </h2>
+          <div id="pc1" class="accordion-collapse collapse show" aria-labelledby="cnae1" data-bs-parent="#accCnae">
+            <div class="accordion-body">
+              Operações de transporte urbano com frota e equipe próprias.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pc2">
+              Secundária — 45.30-4-01: Serviços de manutenção e reparo mecânico de veículos automotores
+            </button>
+          </h2>
+          <div id="pc2" class="accordion-collapse collapse" data-bs-parent="#accCnae">
+            <div class="accordion-body">Manutenção e apoio à frota (dispensado de alvará conforme nota do certificado).</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pc3">
+              Secundária — 45.40-0-01: Comércio por atacado de peças e acessórios novos para veículos automotores
+            </button>
+          </h2>
+          <div id="pc3" class="accordion-collapse collapse" data-bs-parent="#accCnae">
+            <div class="accordion-body">Suprimentos e componentes para manutenção de veículos.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pc4">
+              Secundária — 49.30-2-02: Transporte rodoviário de carga, exceto perigosos e mudanças, intermunicipal, interestadual e internacional
+            </button>
+          </h2>
+          <div id="pc4" class="accordion-collapse collapse" data-bs-parent="#accCnae">
+            <div class="accordion-body">Rotas regionais, nacionais e internacionais.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pc5">
+              Secundária — 49.30-2-03: Transporte rodoviário de produtos perigosos
+            </button>
+          </h2>
+          <div id="pc5" class="accordion-collapse collapse" data-bs-parent="#accCnae">
+            <div class="accordion-body">Atendimento a cargas perigosas conforme regulamentação aplicável.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="cnae6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pc6">
+              Secundária — 70.20-4-00: Atividades de consultoria em gestão empresarial (exceto técnica específica)
+            </button>
+          </h2>
+          <div id="pc6" class="accordion-collapse collapse" data-bs-parent="#accCnae">
+            <div class="accordion-body">Consultoria voltada à eficiência logística e de processos.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="mb-2">Precisa transportar sua carga?</h2>
+      <p class="lead mb-4">Receba um orçamento rápido. Nossa equipe entra em contato com você.</p>
+      <a class="btn btn-light btn-lg" href="#contato"><i class="bi bi-whatsapp"></i> Falar com atendimento</a>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="section-title mb-3">
+            <span class="badge-soft">Atendimento</span>
+            <h2 class="mt-3">Fale conosco</h2>
+          </div>
+
+          <form class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-control" required />
+              <div class="invalid-feedback">Informe seu nome.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-control" required />
+              <div class="invalid-feedback">E-mail inválido.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Telefone</label>
+              <input type="tel" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mensagem</label>
+              <textarea class="form-control" rows="5" placeholder="Conte sobre sua necessidade de transporte" required></textarea>
+              <div class="invalid-feedback">Descreva sua necessidade.</div>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i> Enviar</button>
+              <a class="btn btn-outline-primary" target="_blank" rel="noopener" href="https://wa.me/5541998867130?text=Olá%20PKS%20Transportes,%20gostaria%20de%20um%20orçamento.">
+                <i class="bi bi-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+            <div class="form-text mt-2">Ao enviar, você concorda em ser contatado pela nossa equipe.</div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="ratio ratio-4x3 rounded-4 overflow-hidden">
+            <iframe
+              title="Mapa PKS Transportes – Pinhais/PR"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=R.%20Foz%20do%20Igua%C3%A7u%2C%20366%20-%20Emiliano%20Perneta%2C%20Pinhais%20-%20PR&output=embed">
+            </iframe>
+          </div>
+          <div class="mt-3">
+            <div><i class="bi bi-geo-alt"></i> R. Foz do Iguaçu, 366 — Emiliano Perneta, Pinhais/PR — CEP 83324-500</div>
+            <div><i class="bi bi-envelope"></i> <a href="mailto:kelly.endlich@gmail.com">kelly.endlich@gmail.com</a></div>
+            <div><i class="bi bi-telephone"></i> <a href="tel:+5541998867130">(41) 9886-7130</a></div>
+            <div><i class="bi bi-card-checklist"></i> CNPJ: <b>31.845.444/0001-51</b> — Situação: <b>ATIVA</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div>© <span id="year"></span> PKS Transportes Ltda. Todos os direitos reservados.</div>
+      <div class="small">
+        <a href="#sobre">Sobre</a> ·
+        <a href="#servicos">Serviços</a> ·
+        <a href="#cnaes">CNAEs</a> ·
+        <a href="#contato">Atendimento</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+  <script>
+    // Ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Validação do formulário (Bootstrap)
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+            // Simulação de envio
+            alert('Obrigado! Recebemos sua mensagem e entraremos em contato.');
+            form.reset();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+
+    // Rolagem suave para âncoras do menu
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth'});
+        }
+      })
+    });
+  </script>
 </body>
-
 </html>
